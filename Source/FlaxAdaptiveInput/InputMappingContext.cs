@@ -13,7 +13,7 @@ public struct InputMappingEntry()
     [VisibleIf(nameof(UseAxis))] public InputAxisType AxisType = InputAxisType.KeyboardOnly;
     
     [Space(3)]
-    [Header("Bounds")]
+    [Header("Inputs")]
     [VisibleIf(nameof(UseAxis), true)]
     public KeyboardKeys Key = KeyboardKeys.None;
     

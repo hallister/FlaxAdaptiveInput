@@ -17,7 +17,7 @@ public partial class InputManager
     {
         if (action == null || callback == null) return;
         
-        Debug.Log($"Binding {action.Name} in state {targetState} to tag {identifyingTag}");
+        Debug.Log($"[InputManager] Binding {action.Name} in state {targetState} to tag {identifyingTag}");
 
         var key = new ActionBindingKey(action, targetState);
 
