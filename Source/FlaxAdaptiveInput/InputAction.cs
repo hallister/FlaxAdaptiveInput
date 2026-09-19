@@ -3,15 +3,37 @@ using FlaxEngine;
 
 namespace FlaxAdaptiveInput;
 
+/// <summary>
+/// The underlying action type (boolean, float, Float2, Float3)
+/// </summary>
 public enum InputActionType
 {
-    Digital, // On/Off (Button press)
-    Axis1D,  // Float (Trigger/Throttle)
-    Axis2D,   // Vector2 (Thumbstick/Mouse movement)
-    Axis3D,   // Vector2 (Thumbstick/Mouse movement)
+    /// <summary>
+    /// On/Off (Button press)
+    /// </summary>
+    Digital,
+    
+    /// <summary>
+    /// Float (Trigger/Throttle)
+    /// </summary>
+    Axis1D,
+    
+    /// <summary>
+    /// Vector2 (Thumbstick/Mouse movement)
+    /// </summary>
+    Axis2D,
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    Axis3D,   // Vector3 (Accelerometer?)
 }
 
-[ContentContextMenu("New/Input System/Input Action")]
+/// <summary>
+/// Defines the type of action being performed.
+/// @todo Add triggers and modifiers to the IA's so an action c
+/// </summary>
+[ContentContextMenu("New/Adapative Input/Input Action")]
 
 public class InputAction
 {

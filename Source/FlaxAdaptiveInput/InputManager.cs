@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using FlaxEngine;
 
 namespace FlaxAdaptiveInput;
 
 // ReSharper disable once ClassNeverInstantiated.Global
-public partial class InputManager
+public partial class InputManager : Script
 {
     private readonly List<InputMappingContext> _contextStack = [];
 

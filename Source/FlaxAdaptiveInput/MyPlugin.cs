@@ -26,20 +26,4 @@ public class MyPlugin : GamePlugin
             IsBeta = false,
         };
     }
-
-    /// <inheritdoc />
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        Debug.Log("Hello from plugin code!");
-    }
-
-    /// <inheritdoc />
-    public override void Deinitialize()
-    {
-        // Use it to cleanup data
-
-        base.Deinitialize();
-    }
 }

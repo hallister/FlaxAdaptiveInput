@@ -8,7 +8,7 @@ using FlaxEngine;
 
 namespace FlaxAdaptiveInput;
 
-public partial class InputManager : Script
+public partial class InputManager
 {
     // Cache map: Stores the live instantiated triggers for each InputActionEntry
     private readonly Dictionary<string, List<InputTrigger>> _liveTriggerInstances = [];
