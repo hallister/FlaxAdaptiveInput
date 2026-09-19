@@ -48,7 +48,7 @@ public struct InputActionEntry()
     public List<InputMappingEntry> InputMapping = [];
 }
 
-[ContentContextMenu("New/Input System/Input Mapping")]
+[ContentContextMenu("New/Adaptive Input/Input Mapping")]
 public class InputMappingContext
 {
     public string ContextName;

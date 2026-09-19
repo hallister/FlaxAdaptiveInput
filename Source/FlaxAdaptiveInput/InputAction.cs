@@ -33,7 +33,7 @@ public enum InputActionType
 /// Defines the type of action being performed.
 /// @todo Add triggers and modifiers to the IA's so an action c
 /// </summary>
-[ContentContextMenu("New/Adapative Input/Input Action")]
+[ContentContextMenu("New/Adaptive Input/Input Action")]
 
 public class InputAction
 {
