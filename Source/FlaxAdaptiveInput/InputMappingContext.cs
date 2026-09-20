@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
 using FlaxAdaptiveInput.Modifiers;
 using FlaxAdaptiveInput.Triggers;
 using FlaxEngine;
@@ -37,6 +38,23 @@ public struct InputMappingEntry()
     [Tooltip("Triggers that determine the exact state rules for this binding edited cleanly inline.")]
     [Collection(Display = CollectionAttribute.DisplayType.Header)]
     public List<IInputTrigger> Triggers = [];
+
+    // Force Modifiers and Triggers into an empty array, since Flax will null them if you force them to zero entries.
+    [OnSerializing]
+    internal void OnSerializing(StreamingContext context)
+    {
+        Modifiers ??= [];
+        Triggers ??= [];
+    }
+    
+    // Fixes an issue with deserialziztion resulting in new Modifiers/Triggers mirroring 
+    [OnDeserialized]
+    internal void OnDeserialized(StreamingContext context)
+    {
+        // If the lists are null, or if they were shallow-cloned from an adjacent row, 
+        Modifiers = Modifiers != null ? [..Modifiers] : [];
+        Triggers = Triggers != null ? [..Triggers] : [];
+    }
 }
 
 public struct InputActionEntry()
@@ -46,6 +64,13 @@ public struct InputActionEntry()
     
     [Collection(Display = CollectionAttribute.DisplayType.Header)]
     public List<InputMappingEntry> InputMapping = [];
+    
+    [OnDeserialized]
+    internal void OnDeserialized(StreamingContext context)
+    {
+        // If the lists are null, or if they were shallow-cloned from an adjacent row, 
+        InputMapping = InputMapping != null ? [..InputMapping] : [];
+    }
 }
 
 [ContentContextMenu("New/Adaptive Input/Input Mapping")]
@@ -55,4 +80,11 @@ public class InputMappingContext
     
     [Collection(Display = CollectionAttribute.DisplayType.Header)]
     public List<InputActionEntry> Mappings = [];
+    
+    [OnDeserialized]
+    internal void OnDeserialized(StreamingContext context)
+    {
+        // If the lists are null, or if they were shallow-cloned from an adjacent row, 
+        Mappings = Mappings != null ? [..Mappings] : [];
+    }
 }
