@@ -1,9 +1,9 @@
 using System;
+using FlaxAdaptiveInput;
 using FlaxEditor;
 using FlaxEditor.GUI;
-using FlaxEngine;
 
-namespace FlaxAdaptiveInput;
+namespace FlaxAdaptiveInputEditor;
 
 /// <summary>
 /// The sample editor plugin using <see cref="MyPlugin"/>.
@@ -20,9 +20,6 @@ public class MyPluginEditor : EditorPlugin
     public override void InitializeEditor()
     {
         base.InitializeEditor();
-
-        _button = Editor.UI.ToolStrip.AddButton("My Plugin");
-        _button.Clicked += () => MessageBox.Show("Button clicked!");
     }
 
     /// <inheritdoc />
