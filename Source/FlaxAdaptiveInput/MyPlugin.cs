@@ -14,15 +14,15 @@ public class MyPlugin : GamePlugin
     {
         _description = new PluginDescription
         {
-            Name = "My Plugin",
+            Name = "Flax Adaptive Input",
             Category = "Other",
-            Author = "Flax Engine",
+            Author = "Justin Hall",
             AuthorUrl = null,
             HomepageUrl = null,
-            RepositoryUrl = "https://github.com/FlaxEngine/FlaxAdaptiveInput",
-            Description = "This is an example plugin project.",
+            RepositoryUrl = "https://github.com/hallister/FlaxAdaptiveInput",
+            Description = "An input system modeled after the Unreal Enhanced Input system.",
             Version = new Version(1, 0),
-            IsAlpha = false,
+            IsAlpha = true,
             IsBeta = false,
         };
     }
